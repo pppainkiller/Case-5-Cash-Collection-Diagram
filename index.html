@@ -8,117 +8,27 @@
 <style>
   :root{
     --paper:#f5f5f5;
-    --paper-2:#ffffff;
-    --ink:#2d3142;
-    --muted:#4f5d75;
-    --soft:#7a8399;
-    --rule:rgba(45,49,66,0.12);
-    --accent:#eb6c36;
-    --accent-tint:#fdece1;
-    --font-serif:'Instrument Serif','Noto Serif Thai',serif;
-    --font-sans:'Geist','Noto Sans Thai',sans-serif;
-    --font-mono:'Geist Mono','Noto Sans Thai',monospace;
   }
   *{box-sizing:border-box;}
-  body{
+  html,body{
     margin:0;
     background:var(--paper);
-    color:var(--ink);
-    font-family:var(--font-sans);
-    padding:48px 40px 40px;
+    min-height:100%;
   }
-  .wrap{max-width:1260px;margin:0 auto;}
-  .eyebrow{
-    font-family:var(--font-mono);
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin:0 0 12px;
-    font-weight:500;
-  }
-  h1{
-    font-family:var(--font-serif);
-    font-weight:400;
-    font-size:1.75rem;
-    line-height:1.25;
-    margin:0 0 12px;
-    color:var(--ink);
-  }
-  .subtitle{
-    font-family:var(--font-sans);
-    font-size:14px;
-    line-height:1.6;
-    color:var(--muted);
-    margin:0 0 32px;
-    max-width:760px;
-  }
-  .diagram-container{
-    background:var(--paper);
-    overflow-x:auto;
-  }
-  svg{display:block;width:100%;height:auto;min-width:900px;}
-  .cards{
-    display:grid;
-    grid-template-columns:1.15fr 1fr 0.9fr;
-    gap:16px;
-    margin-top:36px;
-  }
-  .card{
-    background:var(--paper-2);
-    border:1px solid var(--rule);
-    border-radius:6px;
-    padding:1.25rem;
-  }
-  .card-eyebrow{
-    font-family:var(--font-mono);
-    font-size:9px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--soft);
-    margin:0 0 10px;
-  }
-  .card-header{
+  body{
     display:flex;
     align-items:center;
-    gap:8px;
-    margin-bottom:8px;
+    justify-content:center;
+    padding:32px;
   }
-  .card-dot{width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
-  .card-dot.coral{background:var(--accent);}
-  .card-dot.ink{background:var(--ink);}
-  .card-dot.muted{background:var(--muted);}
-  .card h3{
-    font-family:var(--font-sans);
-    font-size:14px;
-    font-weight:600;
-    margin:0;
-    color:var(--ink);
+  .diagram-container{
+    width:100%;
+    max-width:1260px;
   }
-  .card p{
-    font-family:var(--font-sans);
-    font-size:12.5px;
-    line-height:1.6;
-    color:var(--muted);
-    margin:0;
-  }
-  footer{
-    margin-top:32px;
-    padding-top:16px;
-    border-top:1px solid var(--rule);
-    font-family:var(--font-mono);
-    font-size:10px;
-    letter-spacing:0.06em;
-    color:var(--soft);
-  }
+  svg{display:block;width:100%;height:auto;}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <p class="eyebrow">Audit Walkthrough · เงินสดและลูกหนี้การค้า</p>
-  <h1>กระบวนการรับชำระเงินจากลูกค้า (Cash Collection Cycle)</h1>
-  <p class="subtitle">แผนผังขั้นตอนตั้งแต่ลูกค้าชำระเงินจนถึงการบันทึกตัดบัญชีลูกหนี้ บริษัท นำโชคอิเล็กทริก จำกัด — จัดทำเพื่อระบุจุดที่ควรเพ่งความสนใจเป็นพิเศษในการตรวจสอบงบการเงินปี 25X3</p>
-
   <div class="diagram-container">
 <svg viewBox="0 0 1260 760" role="img" aria-labelledby="cashflow-title cashflow-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="cashflow-title">กระบวนการรับชำระเงินและตัดบัญชีลูกหนี้ นำโชคอิเล็กทริก</title>
@@ -236,26 +146,5 @@
 
 </svg>
   </div>
-
-  <div class="cards">
-    <div class="card">
-      <p class="card-eyebrow">ความเสี่ยงหลัก · 1</p>
-      <div class="card-header"><span class="card-dot coral"></span><h3>การยักยอก/หมุนเงิน (Lapping)</h3></div>
-      <p>พนักงานขายเก็บเงินสด/เช็คเอง ถือไว้ระหว่างเดินทางเกือบ 1 เดือน แล้วส่งมอบเอง โดยไม่มีผู้อื่นยืนยันยอดที่รับมาระหว่างทาง เปิดช่องให้นำเงินที่เก็บจากลูกค้ารายหลังไปกลบยอดลูกหนี้รายก่อน ควรเปรียบเทียบวันที่รับเงินจริงกับวันที่บันทึกตัดหนี้ และยืนยันยอดลูกหนี้กับลูกค้าโดยตรง</p>
-    </div>
-    <div class="card">
-      <p class="card-eyebrow">ความเสี่ยงหลัก · 2</p>
-      <div class="card-header"><span class="card-dot ink"></span><h3>การแบ่งแยกหน้าที่ไม่เพียงพอ</h3></div>
-      <p>พนักงานขายคนเดียวกันทั้งเก็บเงิน ถือเงิน และส่งมอบ อีกทั้งค่าคอมมิชชั่นร้อยละ 15 ผูกกับยอดที่เก็บได้จริง อาจเป็นแรงจูงใจให้ปรับช่วงเวลาการนำส่ง ควรมีผู้บังคับบัญชาหรือฝ่ายอิสระตรวจนับ/สุ่มยืนยันเป็นระยะ</p>
-    </div>
-    <div class="card">
-      <p class="card-eyebrow">ความเสี่ยงหลัก · 3</p>
-      <div class="card-header"><span class="card-dot muted"></span><h3>เอกสารยืนยันทางอ้อม</h3></div>
-      <p>ลูกค้าที่โอนเงินส่งเพียงแฟกซ์ใบโอน ไม่ใช่หลักฐานจากธนาคารโดยตรง ควรตรวจสอบยืนยันกับ bank statement หรือ bank confirmation แทนการอิงเอกสารจากลูกค้าฝ่ายเดียว</p>
-    </div>
-  </div>
-
-  <footer>AUDIT PROCESS MAP — นำโชคอิเล็กทริก จำกัด — งบการเงินสำหรับปีสิ้นสุด 31 ธันวาคม 25X3</footer>
-</div>
 </body>
 </html>
